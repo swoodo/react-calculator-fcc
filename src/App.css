@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Code:600&display=swap');
 
 :root {
-  --spacing: 0.2rem;
+  --spacing: 1px;
   --display-size: 5rem;
   --background: #008081;
   --buttons-bg: #C0C0C0;
@@ -16,6 +16,7 @@
 
 @media (min-width: 620px) {
   :root {
+    --spacing: 0.2rem;
     --border-size: 0.5rem;
   }
 }
@@ -33,14 +34,11 @@ html {
 
 body {
   position: relative;
-  background: var(--background);
-
-  background-color: var(--background);
-
-
-  font-family: 'Press Start 2P', cursive;
-  font-weight: 400;
   z-index: 2;
+  background: var(--background);
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -48,6 +46,13 @@ body {
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Opera and Firefox */
+}
+
+@media (min-width: 620px) {
+  body {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 400;
+  }
 }
 
 .container {
@@ -62,7 +67,7 @@ body {
 
 #calculator-border {
   position: relative;
-  width: 100%;
+  width: 99%;
   padding: 2rem 0 2rem 0;
   height: auto;
   position: relative;
@@ -71,6 +76,14 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 4;
+  border-radius: 10px;
+}
+
+@media (min-width: 620px) {
+  #calculator-border {
+    width: 100%;
+    border-radius: 0px;
+  }
 }
 
 #calculator-border::before {
@@ -126,6 +139,7 @@ body {
   background: #303030;
   padding: 1rem 0 1rem 0;
   position: relative;
+  
 
 }
 
@@ -203,6 +217,10 @@ body {
   align-items: center;
   font-size: 0.6rem;
   color: var(--calc-bg);
+
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 400;
+  
 }
 
 #see-more-btn {
@@ -295,6 +313,7 @@ body {
   flex-wrap: wrap;
   justify-content: flex-end;
   padding: var(--spacing);
+  padding-right: 0.5rem;
   color: white;
   background: var(--calc-bg);
   font-size: 0.7rem;
@@ -312,6 +331,7 @@ body {
   font-size: 1.2rem;
   min-height: 1.2rem;
   padding: 1rem 0 1rem 0;
+  padding-right: 0.5rem;
   text-align: right;
   transition: 0s;
   z-index: 1;
@@ -376,7 +396,14 @@ body {
   border-right: var(--border-size) solid rgba(255, 255, 255, 0.8);
   border-top: var(--border-size) solid rgba(0, 0, 0, 0.5);
   border-left: var(--border-size) solid rgba(0, 0, 0, 0.5);
-  background: var(--calc-bg);
+  opacity: 0.8;
+}
+
+@media (min-width: 625px) {
+  #buttons > div:active {
+    opacity: 1;
+    background: var(--calc-bg);
+  }
 }
 
 #clear {
@@ -439,6 +466,9 @@ FOOTER
   width: 100%;
   display: none;
   justify-content: center;
+
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 400;
 
 }
 
